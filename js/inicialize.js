@@ -13,6 +13,12 @@ const getMaxPokemonNumber = async () => {
     return data.count
 }
 
+const getContainerColor = () => {
+    const container = document.querySelector('.container')
+    const containerColor = window.getComputedStyle(container).backgroundColor
+    return containerColor
+}
+
 const clearList = () => {
     list.innerHTML = ""
     list.style.display = "none"

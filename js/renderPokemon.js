@@ -17,20 +17,21 @@ const renderPokemon = async (pokemon) => {
     const data = await fetchPokemon(pokemon)
     
     if (data) {
-        pokeCard.forEach((containers, index) => {
+        pokeCards.forEach((containers, index) => {
             updateElements(data, index)
             containers.style.background = getAtt(data['types']['0']['type']['name'])
         })
         currentPokemon = data.id
 
     } else {
-        pokeCard.forEach((containers, index) => {
+        pokeCards.forEach((containers, index) => {
             updateElements(null, index)
             containers.style.background = '#c6c6c6'
         })
     }
 
     inpSearch.value = ""
+    clearList()
 }
 
 // Atualiza os elementos do PokeCard
@@ -49,10 +50,17 @@ const updateElements = (data, index) => {
             const element = elements[index]
             const value = data ? getValueFromData(data, defaultValues[i]) : defaultValues[i]
         
-            if (selector === ".poke-img" && value)
+            if (selector === ".poke-img" && value) {
                 element.src = getImg(value)
-            else
+            } else {
                 element[selector.includes("img") ? "src" : "innerHTML"] = value
+            }
+
+            if (selector === ".poke-type" && value) {
+                element.src = getType(value)
+            } else {
+                element[selector.includes("img") ? "src" : "innerHTML"] = value
+            }
 
         }
     })

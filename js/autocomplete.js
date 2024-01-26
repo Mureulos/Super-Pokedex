@@ -42,11 +42,13 @@ const createOption = (pokemon) => {
     })
 
     li.addEventListener('mouseover', () => {
-        li.style.background = pokeCard.style.background
+        li.style.background = getContainerColor()
+        li.style.color = "#FFF"
     })
 
     li.addEventListener('mouseout', () => {
         li.style.background = ''
+        li.style.color = "#000"
     })
 
     return li

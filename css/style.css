@@ -18,20 +18,27 @@ html, body {
     font-weight: 600;
 }
 
-main {
+swiper-container {
+    box-sizing: content-box;
     position: absolute;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
     gap: 1em;
     z-index: 1;
     color: #FFF;
 }
 
 .container {
+    box-sizing: border-box;
     display: grid;
+    justify-content: center;
     align-items: center;
     padding: 2em;
     gap: 2em;
     max-width: 300px;
+    height: auto;
     border-radius: 10px;
     background-color: #c6c6c6;
     box-shadow: 7px 9px 10px #00000023;
@@ -47,7 +54,7 @@ form {
     height: 2.75em;
 }
 
-#inpSearch, #buttons-box button {
+.inpSearch, #buttons-box button {
     box-sizing: border-box;
     outline: none;
     border: 1px solid #e5e5e5;
@@ -93,7 +100,6 @@ form div {
 }
 
 .autocomplete-list li:hover {
-    color: #FFF;
     transform: scale(1.2);
 }
 
@@ -147,7 +153,6 @@ form div {
 }
 
 
-
 #buttons-box {
     display: flex;
     justify-content: space-between;
@@ -166,4 +171,3 @@ form div {
     color: #FFF;
     transform: scale(1.1);
 }
-

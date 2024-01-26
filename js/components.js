@@ -1,11 +1,13 @@
-const pokeCard = document.querySelectorAll(".container")
+const pokeCards = document.querySelectorAll(".container")
 const pokeName = document.querySelectorAll(".poke-name")
 const pokeNumber = document.querySelectorAll(".poke-number")
 const pokeImg = document.querySelectorAll(".poke-img")
 const pokeType = document.querySelectorAll(".poke-type")
 
+const background = document.querySelector(".pokeCard")
+
 const form = document.querySelector("form")
-const inpSearch = document.querySelector("#inpSearch")
+const inpSearch = document.querySelector(".inpSearch")
 const list = document.querySelector('.autocomplete-list')
 
 const btnPrev = document.querySelector(".prevPokemon")

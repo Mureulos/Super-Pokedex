@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokedex</title>
+
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="./img/favicon-pokeball.png">
+
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/background.css">
+        <link rel="stylesheet" href="./css/style.css">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+        <h1 id="title">Pokedex</h1>
+
+        <main>
+            <div class="container">
+            </div>
+
+            <div class="container pokeCard">
+                <form>
+                    <input type="text" id="inpSearch" placeholder="Name or Number" required>
+                    
+                    <div class="hoverElement uil uil-search"></div>
+                    <span id="balloon"></span>
+
+                    <ul class="autocomplete-list"></ul>
+                </form>
+                
+                <section class="poke-data">
+                    <figure class="poke-background">
+                        <img src="" class="poke-img">
+                    </figure>
+
+                    <div>
+                        <span class="poke-number"></span>
+                        <h2 class="poke-name"></h2>
+                    </div>
+                    
+                    <img src="" class="poke-type">
+                </section>
+                    
+                <section id="buttons-box">
+                    <button class="prevPokemon uil uil-arrow-left"></button>
+                    <button class="nextPokemon uil uil-arrow-right"></button>
+                </section>
+            </div>
+
+            <div class="container">
+                <section class="poke-data">
+                    <figure class="poke-background">
+                        <img src="" class="poke-img">
+                    </figure>
+
+                    <div>
+                        <span class="poke-number"></span>
+                        <h2 class="poke-name"></h2>
+                    </div>
+                    
+                    <img src="" class="poke-type">
+                </section>
+            </div>
+        </main>
+        
+        <footer>&copy; Made by Mureulos</footer>
+ 
+        <!--Animated background-->
+        <div class="area">
+            <ul class="circles">
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+            </ul>
+        </div>
+
+        <script src="./js/components.js"></script>
+        <script src="./js/form.js"></script>
+        <script src="./js/inicialize.js"></script>
+        <script src="./js/renderPokemon.js"></script>
+        <script src="./js/autocomplete.js"></script>
+</body>
+</html>

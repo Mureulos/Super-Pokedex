@@ -71,18 +71,6 @@ form div {
     color: #000000;
 }
 
-#balloon {
-    display: none;
-    position: absolute;
-    border-radius: 10px 10px 10px 0;
-    width: 82px;
-    padding: 1em;
-    background-color: #3e3e3e;
-    color: #FFF;
-    font-weight: 500;
-    right: -100px;
-    top: -40px;
-}
 
 .autocomplete-list {
     display: none;
@@ -108,6 +96,10 @@ form div {
     box-shadow: none;
 }
 
+.in-row {
+    display: flex;
+    gap: 1em;
+}
 
 .poke-data {
     display: flex;
@@ -117,7 +109,7 @@ form div {
     text-transform: capitalize;
 }
 
-.poke-background {
+.background-img {
     display: flex;
     justify-self: center;
     justify-content: center;
@@ -130,14 +122,9 @@ form div {
     /*box-shadow: 5px 7px 8px #00000028;*/
 }
 
-.poke-img {
+.poke-img, .poke-imgShiny {
     justify-self: center;
     align-self: center;
-}
-
-.poke-data div {
-    display: flex;
-    gap: 0.75em;
 }
 
 .poke-number {
@@ -148,10 +135,56 @@ form div {
     content: '#';
 }
 
-.poke-type {
+.poke-type1, .poke-type2 {
     width: 24px;
 }
 
+.poke-extra-info {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 1em;
+    font-size: 0.9rem;
+}
+
+.poke-weight::before {
+    content: 'Weight: ';
+    font-weight: bold;
+}
+
+.poke-height::before {
+    content: 'Height: ';
+    font-weight: bold;
+}
+
+.poke-ability1::before {
+    content: 'Ability 1: ';
+    font-weight: bold;
+}
+
+.poke-ability2::before {
+    content: 'Ability 2: ';
+    font-weight: bold;
+}
+
+.poke-experience::before {
+    content: 'Base experience: ';
+    font-weight: bold;
+}
+
+
+#balloon {
+    display: none;
+    position: absolute;
+    border-radius: 10px 10px 10px 0;
+    width: 82px;
+    padding: 1em;
+    background-color: #3e3e3e;
+    color: #FFF;
+    font-weight: 500;
+    right: -100px;
+    top: -40px;
+}
 
 #buttons-box {
     display: flex;

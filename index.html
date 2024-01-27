@@ -18,7 +18,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-        <h1 id="title">Pokedex</h1>
+        <h1 id="title">
+            Pokedex
+        </h1>
 
         <swiper-container 
             class="mySwiper"
@@ -27,24 +29,7 @@
             pagination-clickable="true" 
             space-between="50"
             slides-per-view="1"
-            initial-slide="1"
-            loop="true"
         >
-            <swiper-slide class="container">
-                <section class="poke-data">
-                    <figure class="poke-background">
-                        <img src="" class="poke-img">
-                    </figure>
-
-                    <div>
-                        <span class="poke-number"></span>
-                        <h2 class="poke-name"></h2>
-                    </div>
-                    
-                    <img src="" class="poke-type">
-                </section>
-            </swiper-slide>
-
             <swiper-slide class="container pokeCard">
                 <form>
                     <input type="text" class="inpSearch" placeholder="Name or Number" required>
@@ -56,16 +41,16 @@
                 </form>
                 
                 <section class="poke-data">
-                    <figure class="poke-background">
+                    <figure class="background-img">
                         <img src="" class="poke-img">
                     </figure>
 
-                    <div>
+                    <div class="in-row">
                         <span class="poke-number"></span>
                         <h2 class="poke-name"></h2>
                     </div>
                     
-                    <img src="" class="poke-type">
+                    <img src class="poke-type1">
                 </section>
                     
                 <section id="buttons-box">
@@ -76,21 +61,35 @@
 
             <swiper-slide class="container">
                 <section class="poke-data">
-                    <figure class="poke-background">
-                        <img src="" class="poke-img">
-                    </figure>
-
-                    <div>
+                    <div class="in-row">
                         <span class="poke-number"></span>
                         <h2 class="poke-name"></h2>
                     </div>
+
+                    <figure class="in-row">
+                        <img src class="poke-type1">
+                        <img src class="poke-type2">
+                    </figure>
                     
-                    <img src="" class="poke-type">
+
+                    <figure class="background-img">
+                        <img src="" class="poke-imgShiny"/>
+                    </figure>
+
+                    <div class="poke-extra-info">
+                        <span class="poke-ability1"></span>
+                        <span class="poke-ability2"></span>
+                        <span class="poke-weight"></span>
+                        <span class="poke-height"></span>
+                        <span class="poke-experience"></span>
+                    </div>
                 </section>
             </swiper-slide>
         </swiper-container>
         
-        <footer>&copy; Made by Mureulos</footer>
+        <footer>
+            &copy; Made by Mureulos
+        </footer>
  
         <!--Animated background-->
         <div class="area">

@@ -1,3 +1,4 @@
+// Inicialize.js
 let currentPokemon = 1
 let maxPokemon
 

@@ -1,10 +1,21 @@
+// Components.js
 const pokeCards = document.querySelectorAll(".container")
 const pokeName = document.querySelectorAll(".poke-name")
 const pokeNumber = document.querySelectorAll(".poke-number")
-const pokeImg = document.querySelectorAll(".poke-img")
-const pokeType = document.querySelectorAll(".poke-type")
 
-const background = document.querySelector(".pokeCard")
+const pokeImg = document.querySelectorAll(".poke-img")
+const pokeImgShiny = document.querySelectorAll(".poke-imgShiny")
+
+const pokeType1 = document.querySelectorAll(".poke-type1")
+const pokeType2 = document.querySelectorAll(".poke-type2")
+
+const pokeWeight = document.querySelectorAll(".poke-weight")
+const pokeHeight = document.querySelectorAll(".poke-height")
+
+const pokeAbility1 = document.querySelectorAll(".poke-ability1")
+const pokeAbility2 = document.querySelectorAll(".poke-ability2")
+
+const pokeExperience = document.querySelectorAll(".poke-experience")
 
 const form = document.querySelector("form")
 const inpSearch = document.querySelector(".inpSearch")

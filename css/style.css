@@ -12,10 +12,22 @@ html, body {
     text-align: center;
 }
 
-#title {
+#title, footer {
     position: absolute;
+    color: #FFF;
     font-size: 1.5rem;
     font-weight: 600;
+    z-index: 2;
+}
+
+#title {
+    top: 50px;
+}
+
+footer {
+    bottom: 50px;
+    font-size: 1rem;
+    font-weight: normal;
 }
 
 swiper-container {
@@ -46,10 +58,6 @@ swiper-container {
     background-color: #c6c6c6;
 }
 
-footer {
-    position: absolute;
-}
-
 
 /*Form and Buttoons*/
 form {
@@ -57,14 +65,18 @@ form {
     height: 2.75em;
 }
 
-.inpSearch, #buttons-box button {
+.inpSearch, .nextPokemon, .prevPokemon, .randomPokemon {
     box-sizing: border-box;
     outline: none;
     border: 1px solid #e5e5e5;
     border-radius: 10px;
-    height: 100%;
-    padding: 0 3.2em 0 1.5em;
     box-shadow: 7px 6px 10px #00000028;
+    transition: all 0.2s;
+}
+
+.inpSearch {
+    padding: 0 3.2em 0 1.5em;
+    height: 100%;
 }
 
 form div {
@@ -98,20 +110,26 @@ form div {
     box-shadow: none;
 }
 
-#buttons-box {
+.buttons-box {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
+    gap: 0.5em;
 }
 
-#buttons-box button {
+.nextPokemon, .prevPokemon {
     padding: 0.75em 2em;
     width: 47%;
     background-color: #FFF;
     font-size: 1rem;
 }
 
-#buttons-box button:active {
+.randomPokemon {
+    padding: 0.25rem 1rem;
+}
+
+.buttons-box button:active {
     border: none;
     background-color: #cccccc;
     color: #FFF;
@@ -140,6 +158,10 @@ bold {
 .in-row {
     display: flex;
     gap: 1em;
+}
+
+.poke-name {
+    font-size: 0.9rem;
 }
 
 .background-img {
@@ -172,7 +194,7 @@ bold {
 .poke-data {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 1em;
     font-size: 0.8rem;
     text-transform: capitalize;
@@ -181,14 +203,39 @@ bold {
 .poke-type1, .poke-type2 {
     width: 24px;
     border-radius: 1000px;
+    box-shadow: 1px 7px 13px #0000002b;
+}
+
+.background-desc {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #e4e4e48e;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 5px 7px 8px #00000028;
 }
 
 .poke-description {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
     line-height: 1.75em;
     text-align: justify;
 }
 
-@media (max-width: 1250px) {
-    
+
+@media (max-width: 600px) {
+    swiper-container, .container {
+        width: 250px;
+    }
+}
+
+@media (min-height: 750px) {
+    #title {
+        top: 100px;
+    }
+
+    footer {
+        bottom: 100px;
+    }
 }

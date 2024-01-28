@@ -12,26 +12,29 @@ form.addEventListener("submit", (event) => {
 
 const btnPrev = document.querySelector(".prevPokemon")
 const btnNext = document.querySelector(".nextPokemon")
+const btnRandom = document.querySelector(".randomPokemon")
 
 btnPrev.addEventListener("click", () => {
-    if (currentPokemon > 1)
+    if (currentPokemon > 1) {
         currentPokemon -= 1
+    }
 
-    pokeImg.src = "./img/loading.gif"
-    pokeImgShiny.src = "./img/loading.gif"
     renderPokemon(currentPokemon)
-
     clearList()
 })
 
 btnNext.addEventListener("click", () => {
-    if (currentPokemon < maxPokemon)
+    if (currentPokemon < maxPokemon) {
         currentPokemon += 1
-    
-    pokeImg.src = "./img/loading.gif"
-    pokeImgShiny.src = "./img/loading.gif"
-    renderPokemon(currentPokemon)
+    }
 
+    renderPokemon(currentPokemon)
+    clearList()
+})
+
+btnRandom.addEventListener("click", () => {
+    currentPokemon = Math.floor(Math.random() * maxPokemon)
+    renderPokemon(currentPokemon)
     clearList()
 })
 

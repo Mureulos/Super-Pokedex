@@ -18,9 +18,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-        <h1 id="title">
-            Pokedex
-        </h1>
+        <h1 id="title">Pokedex</h1>
 
         <swiper-container 
             class="mySwiper"
@@ -54,9 +52,10 @@
                     <img src class="poke-type1">
                 </section>
                     
-                <section id="buttons-box">
+                <section class="buttons-box">
                     <button class="prevPokemon uil uil-arrow-left"></button>
                     <button class="nextPokemon uil uil-arrow-right"></button>
+                    <button class="randomPokemon uil uil-arrow-random"></button>
                 </section>
             </swiper-slide>
         
@@ -94,10 +93,10 @@
                     <img src class="poke-type2">
                 </figure>
 
-                <p class="poke-description">
-
-                </p>
-
+                <div class="background-desc">
+                    <p class="poke-description"></p>
+                </div>
+                
                 <section class="poke-data">
                     <span class="poke-habitat"></span>
                     <span class="poke-weight"></span>
@@ -108,10 +107,8 @@
                 </section>
             </swiper-slide>
         </swiper-container>
-        
-        <footer>
-            &copy; Made by Mureulos
-        </footer>
+
+        <footer>&copy; Made by Mureulos</footer>
  
         <!--Animated background-->
         <div class="area">

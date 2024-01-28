@@ -8,7 +8,7 @@ const fetchPokemon = async (pokemon) => {
             const data2 = await fetchPokemonAdditional(pokemon)
             return { data, data2 }
         } else {
-            throw new Error(`Failed to fetch Pokemon`)
+            throw new Error(`Failed to fetch Pokemon: ${pokemon}`)
         }
     } catch (error) {
         console.error(`Error fetching Pokemon:`, error)
@@ -26,11 +26,12 @@ const fetchPokemonAdditional = async (pokemon) => {
 }
 
 const renderPokemon = async (pokemon) => {
+    loading()
     const result = await fetchPokemon(pokemon)
 
-    if (result.error) {
-        errorElements()
-        return
+    if (result.error) {    
+        inpSearch.value = ""
+        return errorElements()
     }
 
     const { data, data2 } = result
@@ -67,14 +68,13 @@ const updateElements = (data, data2) => {
     updateElement(".poke-rate", { label:'Captura rate: ', value: data2.capture_rate })
     updateElement(".poke-experience", { label: 'Base experience: ', value: `${data.base_experience}` })
 
-    updateElement(".poke-description", { value: data2['flavor_text_entries']['1']['flavor_text'] })
-
-    updateElement(".poke-habitat", { label:'Habitat ', value: data2.habitat.name })
+    updateElement(".poke-habitat", { label:'Habitat ', value: verifyHabitat(data2.habitat) })
     updateElement(".poke-weight", { label: 'Weight: ', value: `${data.weight}` })
     updateElement(".poke-height", { label: 'Height: ', value: `${data.height}` })
     updateElement(".poke-color", { label:'Color: ', value: data2.color.name })
     updateElement(".poke-mythical", { label:'Mythical: ', value: data2.is_mythical })
     updateElement(".poke-legendery", { label:'Legendary: ', value: data2.is_legendary })
+    updateElement(".poke-description", { value: getDescription(data2) })
 }
 
 const updateElement = (selector, data) => {
@@ -172,21 +172,53 @@ const getAbility = (data, index) => {
 }
 
 const getDescription = (data) => {
-    const imgPaths = [
-        "flavor_text_entries.",
-        "sprites.front_default"
+    const descriptionsPaths = [
+        'flavor_text_entries.1.flavor_text'
     ]
-    const validPath = imgPaths.find((path) => getValueFromData(data, path))
+    const validPath = descriptionsPaths.find((path) => getValueFromData(data, path))
     
     if (validPath) {
         return getValueFromData(data, validPath)
     } else {
-        return "./img/pokeNotFound.png"
+        return `This pokemon don't have description`
+    }
+}
+
+const verifyHabitat = (data) => {
+    if(data) {
+        return data.name
+    } else {
+        return 'No'
     }
 }
 
 const getAtt = data => type[data]
 
+
+const loading = () => {
+    updateElement(".poke-name", { value: 'Loading...' })
+    updateElement(".poke-number", { value: '' })
+
+    updateElement(".poke-img", { value: './img/loading.gif' })
+    updateElement(".poke-imgShiny", { value: './img/loading.gif' })
+
+    updateElement(".poke-type1", { value: './img/loading.gif' })
+    updateElement(".poke-type2", { value: './img/loading.gif' })
+
+    updateElement(".poke-ability1", { label: 'Ability 1: ', value: '' })
+    updateElement(".poke-ability2", { label: 'Ability 2: ', value: '' })
+    updateElement(".poke-rate", { label:'Captura rate: ', value: '' })
+    updateElement(".poke-experience", { label: 'Base experience: ', value: '' })
+
+    updateElement(".poke-description", { value: 'Loading...' })
+
+    updateElement(".poke-habitat", { label:'Habitat ', value: '' })
+    updateElement(".poke-weight", { label: 'Weight: ', value: '' })
+    updateElement(".poke-height", { label: 'Height: ', value: '' })
+    updateElement(".poke-color", { label:'Color: ', value: '' })
+    updateElement(".poke-mythical", { label:'Mythical: ', value: '' })
+    updateElement(".poke-legendery", { label:'Legendary: ', value: '' })
+}
 
 const errorElements = () => {
     updateElement(".poke-name", { value: 'Error :(' })

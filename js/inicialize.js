@@ -5,7 +5,7 @@ let maxPokemon
 const init = async () => {
     maxPokemon = await getMaxPokemonNumber()
     renderPokemon(currentPokemon)
-    fillArray()
+    await fillArray()
 }
 
 const getMaxPokemonNumber = async () => {

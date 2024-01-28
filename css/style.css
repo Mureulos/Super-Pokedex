@@ -28,20 +28,22 @@ swiper-container {
     gap: 1em;
     z-index: 1;
     color: #FFF;
+    border-radius: 10px;
+    box-shadow: 7px 9px 10px #00000023;
 }
 
 .container {
     box-sizing: border-box;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2em;
-    gap: 2em;
+    gap: 1.5em;
     max-width: 300px;
     height: auto;
     border-radius: 10px;
     background-color: #c6c6c6;
-    box-shadow: 7px 9px 10px #00000023;
 }
 
 footer {
@@ -49,6 +51,7 @@ footer {
 }
 
 
+/*Form and Buttoons*/
 form {
     position: relative;
     height: 2.75em;
@@ -70,7 +73,6 @@ form div {
     right: 1em;
     color: #000000;
 }
-
 
 .autocomplete-list {
     display: none;
@@ -96,99 +98,10 @@ form div {
     box-shadow: none;
 }
 
-.in-row {
-    display: flex;
-    gap: 1em;
-}
-
-.poke-data {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-    text-transform: capitalize;
-}
-
-.background-img {
-    display: flex;
-    justify-self: center;
-    justify-content: center;
-    /*align-items: center;*/
-    background-color: #e4e4e48e;
-    border-radius: 100px;
-    width: 96px;
-    height: 96px;
-    padding: 1em;
-    /*box-shadow: 5px 7px 8px #00000028;*/
-}
-
-.poke-img, .poke-imgShiny {
-    justify-self: center;
-    align-self: center;
-}
-
-.poke-number {
-    font-weight: 600;
-}
-
-.poke-number::before {
-    content: '#';
-}
-
-.poke-type1, .poke-type2 {
-    width: 24px;
-}
-
-.poke-extra-info {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    gap: 1em;
-    font-size: 0.9rem;
-}
-
-.poke-weight::before {
-    content: 'Weight: ';
-    font-weight: bold;
-}
-
-.poke-height::before {
-    content: 'Height: ';
-    font-weight: bold;
-}
-
-.poke-ability1::before {
-    content: 'Ability 1: ';
-    font-weight: bold;
-}
-
-.poke-ability2::before {
-    content: 'Ability 2: ';
-    font-weight: bold;
-}
-
-.poke-experience::before {
-    content: 'Base experience: ';
-    font-weight: bold;
-}
-
-
-#balloon {
-    display: none;
-    position: absolute;
-    border-radius: 10px 10px 10px 0;
-    width: 82px;
-    padding: 1em;
-    background-color: #3e3e3e;
-    color: #FFF;
-    font-weight: 500;
-    right: -100px;
-    top: -40px;
-}
-
 #buttons-box {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 #buttons-box button {
@@ -203,4 +116,79 @@ form div {
     background-color: #cccccc;
     color: #FFF;
     transform: scale(1.1);
+}
+
+#balloon {
+    display: none;
+    position: absolute;
+    border-radius: 10px 10px 10px 0;
+    width: 82px;
+    padding: 1em;
+    background-color: #3e3e3e;
+    color: #FFF;
+    font-weight: 500;
+    right: -100px;
+    top: -40px;
+}
+
+
+/*PokeCards*/
+bold {
+    font-weight: bold;
+}
+
+.in-row {
+    display: flex;
+    gap: 1em;
+}
+
+.background-img {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #e4e4e48e;
+    border-radius: 100px;
+    width: 96px;
+    height: 96px;
+    padding: 1em;
+    box-shadow: 5px 7px 8px #00000028;
+}
+
+.poke-img, .poke-imgShiny {
+    justify-self: center;
+    align-self: center;
+}
+
+.poke-data1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.poke-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+
+.poke-type1, .poke-type2 {
+    width: 24px;
+    border-radius: 1000px;
+}
+
+.poke-description {
+    font-size: 0.8rem;
+    line-height: 1.75em;
+    text-align: justify;
+}
+
+@media (max-width: 1250px) {
+    
 }

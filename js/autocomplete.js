@@ -2,10 +2,10 @@
 const suggestions = [] 
 
 const fillArray = async () => { 
-    for (let i = 0; i < maxPokemon; i++) {
-        const data = await fetchPokemon(i)
+    for (let i = 1; i < maxPokemon; i++) {
+        const { data } = await fetchPokemon(i)
 
-        if (data) {
+        if (data && data.name) {
             suggestions.push(data.name)
         }
     }

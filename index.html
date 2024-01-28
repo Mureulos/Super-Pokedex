@@ -29,6 +29,7 @@
             pagination-clickable="true" 
             space-between="50"
             slides-per-view="1"
+            loop="true"
         >
             <swiper-slide class="container pokeCard">
                 <form>
@@ -40,7 +41,7 @@
                     <ul class="autocomplete-list"></ul>
                 </form>
                 
-                <section class="poke-data">
+                <section class="poke-data1">
                     <figure class="background-img">
                         <img src="" class="poke-img">
                     </figure>
@@ -58,31 +59,52 @@
                     <button class="nextPokemon uil uil-arrow-right"></button>
                 </section>
             </swiper-slide>
-
+        
             <swiper-slide class="container">
+                <section class="in-row">
+                    <span class="poke-number"></span>
+                    <h2 class="poke-name"></h2>
+                </section>
+
+                <figure class="in-row">
+                    <img src class="poke-type1">
+                    <img src class="poke-type2">
+                </figure>
+                
+                <figure class="background-img">
+                    <img src="" class="poke-imgShiny"/>
+                </figure>
+
+                <section class=" poke-data">
+                    <span class="poke-ability1"></span>
+                    <span class="poke-ability2"></span>
+                    <span class="poke-rate"></span>
+                    <span class="poke-experience"></span>
+                </section>
+            </swiper-slide>
+        
+            <swiper-slide class="container">
+                <section class="in-row">
+                    <span class="poke-number"></span>
+                    <h2 class="poke-name"></h2>
+                </section>
+
+                <figure class="in-row">
+                    <img src class="poke-type1">
+                    <img src class="poke-type2">
+                </figure>
+
+                <p class="poke-description">
+
+                </p>
+
                 <section class="poke-data">
-                    <div class="in-row">
-                        <span class="poke-number"></span>
-                        <h2 class="poke-name"></h2>
-                    </div>
-
-                    <figure class="in-row">
-                        <img src class="poke-type1">
-                        <img src class="poke-type2">
-                    </figure>
-                    
-
-                    <figure class="background-img">
-                        <img src="" class="poke-imgShiny"/>
-                    </figure>
-
-                    <div class="poke-extra-info">
-                        <span class="poke-ability1"></span>
-                        <span class="poke-ability2"></span>
-                        <span class="poke-weight"></span>
-                        <span class="poke-height"></span>
-                        <span class="poke-experience"></span>
-                    </div>
+                    <span class="poke-habitat"></span>
+                    <span class="poke-weight"></span>
+                    <span class="poke-height"></span>
+                    <span class="poke-color"></span>
+                    <span class="poke-mythical"></span>
+                    <span class="poke-legendery"></span>
                 </section>
             </swiper-slide>
         </swiper-container>
